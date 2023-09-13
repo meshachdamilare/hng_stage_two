@@ -20,7 +20,7 @@ HNG stage 2 task
 ## Documentation
 
 - View Postman documentation for the API at
-  [Postman link](https://documenter.getpostman.com/view/27840229/2s93zCZgNg)
+  [Postman link](https://documenter.getpostman.com/view/27840229/2s9YC4TsBD)
 
 ## Hosting
 
