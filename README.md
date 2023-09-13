@@ -24,6 +24,6 @@ HNG stage 2 task
 
 ## Hosting
 
-- Trimly API is hosted on render
-  [Link](https://trimly-86ks.onrender.com/)
+- This api hosted on render
+  [Link](https://hng-stage-two-zrn0.onrender.com/)
 
