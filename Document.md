@@ -1,4 +1,4 @@
-### This simple API performs CRUD functionality on a person's pass as a request.
+### This API handles Create, Read, Update, and Delete operations related to a person's name through incoming requests
 
 Create Name 
 - Request Body
