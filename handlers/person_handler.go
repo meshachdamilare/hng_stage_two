@@ -1,12 +1,14 @@
 package handlers
 
 import (
+	"errors"
 	"github/meshachdamilare/hng_stage_two/database"
 	"github/meshachdamilare/hng_stage_two/models"
 	"net/http"
 	"strconv"
 
 	"github.com/gin-gonic/gin"
+	"gorm.io/gorm"
 )
 
 func CreatePerson(c *gin.Context) {
@@ -20,8 +22,14 @@ func CreatePerson(c *gin.Context) {
 	err := database.CreatePerson(&person)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
 	}
-	c.JSON(http.StatusCreated, person)
+	c.JSON(http.StatusCreated, gin.H{
+		"message": "Person created",
+		"id":      person.ID,
+		"name":    person.Name,
+		"track":   person.Track,
+	})
 }
 
 func GetPerson(c *gin.Context) {
@@ -78,6 +86,16 @@ func DeletePerson(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-	database.DeletePerson(id)
+	err = database.DeletePerson(id)
+	if err != nil {
+		if errors.Is(err, gorm.ErrRecordNotFound) {
+			c.JSON(http.StatusNotFound, gin.H{"error": "Record not found"})
+			return
+		} else {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "Internal server error"})
+			return
+		}
+	}
+
 	c.JSON(http.StatusNoContent, nil)
 }

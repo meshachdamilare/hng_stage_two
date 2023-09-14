@@ -38,6 +38,12 @@ func UpdatePerson(person models.Person) models.Person {
 	return person
 }
 
-func DeletePerson(id int) {
-	db.Delete(&models.Person{}, "id = ?", id)
+func DeletePerson(id int) error {
+	var person models.Person
+	if err := db.First(&person, id).Error; err != nil {
+		return err
+	}
+	db.Delete(&person)
+
+	return nil
 }
