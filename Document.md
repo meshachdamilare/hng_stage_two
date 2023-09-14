@@ -19,7 +19,6 @@ Create Name
 
 Get Name
 - Request is a path parameter e.g (localhost:4000/api/1)
-  
 
 - Response
   ```json
@@ -30,7 +29,7 @@ Get Name
     "DeletedAt": null,
     "name": "Peace",
     "track": "Marketing"
-    }
+  }
   
   ```
 
