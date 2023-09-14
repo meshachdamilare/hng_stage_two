@@ -18,7 +18,7 @@ Create Name
 ```
 
 Get Name
-- Request is a path parameter e.g (localhost:4000/api/1)
+- Request => to a path parameter e.g (localhost:4000/api/1)
 
 - Response
   ```json
@@ -32,4 +32,26 @@ Get Name
   }
   
   ```
+
+Update Name 
+- Request
+- path parameter e.g (localhost:4000/api/1)
+- request body
+  
+```json
+{
+    "name":"Johnson"
+}
+```
+- Response
+```json
+{
+    "ID": 1,
+    "CreatedAt": "2023-09-14T18:49:45.935058+01:00",
+    "UpdatedAt": "2023-09-14T19:14:03.772178+01:00",
+    "DeletedAt": null,
+    "name": "Johnson",
+    "track": "Marketing"
+}
+```
 
