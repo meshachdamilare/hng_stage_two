@@ -1,7 +1,7 @@
 ### This simple API performs CRUD functionality on a person's pass as a request.
 
 Create Name 
-- Request
+- Request Body
 ```json
 {
     "name":"Peace",
@@ -35,7 +35,7 @@ Get Name
 
 Update Name 
 - Request => With a path parameter in the URL e.g (localhost:4000/api/1)
-- request body
+- Request Body
 ```json
 {
     "name":"Johnson"
@@ -52,4 +52,13 @@ Update Name
     "track": "Marketing"
 }
 ```
+
+Delete Name
+- Request => With a path parameter in the URL e.g (localhost:4000/api/1)
+
+- Response
+- Status Code 204 
+  ```json
+  {}
+  ```
 
